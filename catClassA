@@ -1,0 +1,120 @@
+/********************
+Brian Frey
+Co Sci 540	
+Lab 03
+
+*******************/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Cat {
+public:
+	string name;   
+	string age;  
+	string breed; 
+	string color;
+
+	  //getter
+	string getName(void);
+	string getAge(void);
+	string getBreed(void);
+	string getColor(void);
+	
+	  //setters
+	void setName(string inputName);
+	void setAge(int inputAge);
+	void setBreed(string inputBreed);
+	void setColor(string inputColor);
+	//actions
+	string catStretches(void);
+	string catMeows(void);
+	string catPurrs(void);
+};
+
+string Cat::catStretches(void) {
+	return " is stretching.\n";   //action one
+}
+string Cat::catPurrs(void) {
+	return " is purring.\n";   //action two
+}
+string Cat::catMeows(void) {
+	return " is meowing.\n";   //action three
+}
+
+//setters
+void Cat::setName(string inputName) {
+	name = inputName;
+}
+void Cat::setAge(int inputAge) {
+	age = inputAge;
+}
+void Cat::setBreed(string inputBreed) {
+	breed = inputBreed;
+}
+void Cat::setColor(string inputColor) {
+	color = inputColor;
+}
+
+//getters
+string Cat::getName(void) {
+	return name;
+}
+string Cat::getAge(void) {
+	return age;
+}
+string Cat::getBreed(void) {
+	return breed;
+}
+string Cat::getColor(void) {
+	return color;
+}
+
+
+
+
+int main() {
+	Cat Cat1;        
+	Cat Cat2;        //Declare cats 
+	string name, breed, color, age;
+
+
+	// cat 1 specification
+	Cat1.name = "Whiskers";
+	Cat1.age = "3";
+	Cat1.breed = "Siamese";
+	Cat1.color = "light brown";
+
+	// cat 2 specification
+	Cat2.name = "Mittens";
+	Cat2.age = "2";
+	Cat2.breed = "Siberian";
+	Cat2.color = "Grey";
+
+	name = Cat1.getName();
+	age = Cat1.getAge();
+	breed = Cat1.getBreed();
+	color = Cat1.getColor();
+
+	cout << "Cat1" << endl << endl;
+	cout << "Name is " + name + ", age is " + age + ", breed is " + breed + ", color is " + color + "." << endl << endl;
+	cout << Cat1.name + Cat1.catPurrs()<< endl;
+	cout << Cat1.name + Cat1.catMeows() << endl;
+	cout << Cat1.name + Cat1.catStretches() << endl;
+
+	name = Cat2.getName();
+	age = Cat2.getAge();
+	breed = Cat2.getBreed();
+	color = Cat2.getColor();
+
+	cout << "Cat2" << endl << endl;
+	cout << "Name is " + name + ", age is " + age + ", breed is " + breed + ", color is " + color + "." << endl << endl;
+	cout << Cat2.name + Cat1.catPurrs() << endl;
+	cout << Cat2.name + Cat1.catMeows() << endl;
+	cout << Cat2.name + Cat1.catStretches() << endl;
+	
+	system("pause");
+	return 0;
+}
